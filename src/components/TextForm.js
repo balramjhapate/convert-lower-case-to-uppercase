@@ -6,7 +6,7 @@ export default function TextForm(props) {
         let newText=text.toUpperCase();
         setText(newText)
     }
-    const handleOnChange= ()=> {
+    const handleOnChange= (event)=> {
         console.log("on change ");
         setText(event.target.value )
     }
