@@ -1,6 +1,12 @@
 import React,{useState}from 'react'
 
 export default function TextForm(props) {
+  const handleClearClick= ()=> {
+    console.log("CLear ewas clicked" + text);
+    let newText= ''
+    setText(newText)
+  }
+  
 
   function titleCase(str) {
     // Step 1. Lowercase the string
@@ -67,6 +73,7 @@ export default function TextForm(props) {
     const [text, setText] = useState("enter your text ");
 
   return (
+    <>
     <div>
         <h1>{props.heading}</h1>
 <div className="mb-3">
@@ -76,8 +83,19 @@ export default function TextForm(props) {
 
 
 <button className="m-3 -5 btn btn-info"onClick={HTMLCanvasElement}>Convert to LowerCase</button>
+
 <button className="btn btn-success" onClick={onCLickTitle} >Convert to Titles </button>
+<button className="btn btn-warning mx-3" onClick={handleClearClick} >ClearTexxt  </button>
+
 
     </div>
+    <div classsName="container my-3">
+      <h1>Your Text Summary</h1>
+      <p>{text.split(" ").length}words and {text.length} character</p>
+      <p>{0.008*text.split(" ").length}Minutes read </p>
+      <h2>PREVIEW</h2>
+      <p>{text}</p>
+      </div>
+    </>
   ) 
 }
